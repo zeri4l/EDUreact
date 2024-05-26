@@ -1,0 +1,147 @@
+
+todo-list 
+
+(CRUD)
+Create
+Read
+Update
+Delete
+
+1. todo-list
+    css-in-js (styled-components)
+    scss, tailwindcss, emotion, vanillaExtract, styleX
+    템플릿
+
+2. hookstodo
+    state, 관심사 분리
+
+3. contextTodo
+    global state management
+
+4. reduxTodo
+    flux pattern, middle ware, msw
+
+5. fetchTodo
+    data fetch, auth, react-hook-form(RHF)
+
+6. node-js(express)
+    dbms, express, orm, todo-list
+
+7. react-query, recoil todo
+    gcTime, staleTime
+
+8. suspense, error-boundary
+    error handling
+
+---
+
+리액트의 폴더 구조
+
+1. Container/Presentational 폴더 구조
+2019년(React16) 이전에 많이 사용했던 폴더 구조
+함수형 컨포넌트가 나오기 이전에 사용
+
+board
+    Container.js (logic) - 기능
+    Presenter.js (View) - 화면
+
+
+React16의 hooks function 등장  이후 사용하지 않는 패턴
+특수한 경우에는 사용하면 좋은 패턴
+
+
+2. Hooks 폴더 구조
+
+최근에 가장 많이 사용하는 폴더 구조
+
+    components -> 모든 페이지에 공유 가능한 컴포넌트 (버튼)
+    hooks -> 상태 관련된 재사용되는 리액트 함수
+    pages -> 웹 내 페이지
+        main
+            hooks -> 해당 페이지에서만 사용하는 리액트 함수
+            components -> 해당 페이지에서만 사용되는 컴포넌트 (버튼)
+            index.js(main.js) -> 컴포넌트들이 조립되는 공간
+
+        todo 
+        board
+        my-Page
+    utils -> 유틸 함수 (helper)
+    libs -> 라이브러리 관련된 함수나 폴더가 구성
+    app.js -> 다른 라이브러리를 사용하는 설정이나, 루트 설정
+
+3. Atomic 폴더 구조
+
+이론 상으로는 완벽한 패턴, 어떠한 컴포넌트든 재사용
+atom(원자) 단위로 쪼개서 더 이상 분리할 수 없게끔 컴포넌트를 분리
+이론 상으로만 완벽
+
+    atoms -> 더 이상 쪼갤 수 없는 컴포넌트
+    molecules -> 여러 개의 atom이 모여 하나의 의미를 갖는 컴포넌트
+    organisms -> 여러 개의 molecule이 모여 하나의 기능을 갖는 컴포넌트
+    templates -> 여러 개의 organism이 모여 하나의 프레임을 갖춘 컴포넌트
+    pages -> 완성본
+
+
+
+4. FSD(Features, Sliced Design) 폴더 구조
+
+출시된지 얼마 안 됨
+
+프로젝트의 도메인 혹은 기능을 분배하여 폴더 구조를 작성
+
+---
+
+todolist 폴더 구조 (hooks)
+
+1. 강의o -> 한번에 이해
+         -> 어려움 -> 질문
+
+2. 사설 강의 -> 강의는 한번만
+3. 보고 만들고 -> 안 보고 만들고 -> 바꾸어 만드는 것
+4. 리액트는 폴더 단위로 파일 단위로 이동하기 때문에 필기할 때 순서 기록
+
+src
+    components
+        Button.js
+
+    layouts
+        Footer.js
+        Header.js
+        Layouts.js
+
+    pages
+        main
+            components
+                Form.js
+            index.js(main.js)
+
+        todo
+            components
+                AddModal.js
+                OneTodo.js
+                TodoList.js --> 수업용
+            index.js(todo.js)
+
+    libs
+        routes
+            router.js --> URL과 PAGES를 매칭
+    
+    styles
+        디자인시스템(디자인 토큰)
+        공용 스타일
+
+
+---
+
+react-router-dom
+
+router : 네트워크에 데이터를 전송하는 무언가 (소포)
+현재 웹사이트의 URL을 감지하여 어떠한 컴포넌트를 보여줄지 결정하는 도구
+
+npm i react-router-dom
+
+---
+
+
+
+
