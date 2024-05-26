@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import SignUpForm from "./_components/SignUpform";
+import SignInForm from "./_components/SignInForm";
 
 /*
 컴포넌트를 나누는 기준
@@ -20,7 +22,20 @@ const Main = () => {
   // 컴포넌트 -> 레이아웃, 회원가입 폼, 로그인 폼, 인풋 , 버튼
   // 만약에 컴포넌트 나누느넥 익숙하지 않다면 -> 한번에 작성했다가 이후에 나눠도 ok
 
-  return <Wrapper>1</Wrapper>;
+  return (
+    <S.Wrapper>
+      <S.Container>
+        {/*container*/}
+        {/*header*/}
+        <S.Header>
+          <S.Tab>SIGN-IN</S.Tab>
+          <S.Tab>SIGN-UP</S.Tab>
+        </S.Header>
+        <SignInForm />
+        <SignUpForm />
+      </S.Container>
+    </S.Wrapper>
+  );
 };
 export default Main;
 
@@ -33,3 +48,40 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+const Container = styled.div`
+  width: 360px;
+  border: 1px solid #999;
+`;
+const Header = styled.div`
+  background-color: aqua;
+  display: flex;
+`;
+const Tab = styled.div`
+  width: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* 
+  div > section >  p
+  div > section >  p > a
+
+  div >  section > p {
+      &(div > section > p) > a {
+      }
+  }
+*/
+
+  &:hover {
+    background-color: aliceblue;
+  }
+`;
+
+const S = {
+  Wrapper,
+  Container,
+  Header,
+  Tab,
+};
