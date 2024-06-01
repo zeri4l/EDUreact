@@ -1,16 +1,23 @@
 import styled from "styled-components";
+import FormInput from "../../../components/FormInput";
+import TDButton from "../../../components/Button";
 
 const SignInForm = () => {
   return (
     <S.Form>
-      <S.InputBox>
-        <S.InputLabel>이메일</S.InputLabel>
-        <S.Input placeholder={"email    "} />
-      </S.InputBox>
-      <S.InputBox>
-        <S.InputLabel>비밀번호</S.InputLabel>
-        <S.Input placeholder={"password    "} />
-      </S.InputBox>
+      <FormInput label={"이메일"} placeholder={"email"} size={3} />
+      <FormInput
+        label={"비밀번호"}
+        size={3}
+        containerStyle={{
+          width: 100,
+        }}
+      />
+
+      {/* 스타일 가이드/디자인 시스템 -> 정해진 값으로 컴포넌트를 빠르게 생산 */}
+      <TDButton variant={"primary"} size={"full"}>
+        로그인
+      </TDButton>
     </S.Form>
   );
 };
